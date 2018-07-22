@@ -7,6 +7,8 @@
 		<title>企业重大危险源风险管控电子地图</title>
 		<link rel="stylesheet" href="../js/layui/css/layui.css">
 		<link rel="stylesheet" type="text/css" href="../css/mainpage.css" />
+		<link rel="stylesheet" type="text/css" href="../js/Cesium/Widgets/widgets.css" />
+		<link rel="stylesheet" type="text/css" href="../css/pretty.css" />
 	</head>
 
 	<body class="layui-layout-body">
@@ -15,7 +17,7 @@
 				<div class="layui-logo"></div>
 				<!-- 头部区域（可配合layui已有的水平导航） -->
 				<ul class="layui-nav layui-layout-right">
-					<li class="layui-nav-item">
+					<li class="layui-nav-item" onclick="liClick()">
 						<a><span class="mapicon"></span>
 							<a style="position: absolute;top: 15px;left: 20px;">电子地图</a>
 						</a>
@@ -25,7 +27,7 @@
 							<a style="position: absolute;top: 15px;left: 20px;">影像地图</a>
 						</a>
 					</li>
-					<li class="layui-nav-item">
+					<li class="layui-nav-item" onclick="initmap3D()">
 						<a><span class="sceneicon"></span>
 							<a style="position: absolute;top: 15px;left: 20px;">三维场景</a>
 						</a>
@@ -58,8 +60,7 @@
 							</span> 月
 							<span>
 								
-							</span> 日
-							&nbsp;&nbsp;
+							</span> 日 &nbsp;&nbsp;
 							<span>
 								
 							</span> 时
@@ -68,12 +69,11 @@
 							</span> 分
 							<span>
 								
-							</span> 秒
-							&nbsp;&nbsp;
+							</span> 秒 &nbsp;&nbsp;
 							<span>
 								
 							</span>
-							
+
 						</div>
 
 					</div>
@@ -160,9 +160,30 @@
 				</div>
 			</div>
 
-			<div class="layui-body" style="background: #000000; bottom: 0;">
+			<div class="layui-body" style="background: #000000;bottom:0px;left: 260px; top: 60px;">
 				<!-- 内容主体区域 -->
-				<div style="padding: 15px;">内容主体区域</div>
+				<div id='cesiumContainer'></div>
+
+				<div id='loadingbar' class="spinner">
+					<div class="spinner-container container1">
+						<div class="circle1"></div>
+						<div class="circle2"></div>
+						<div class="circle3"></div>
+						<div class="circle4"></div>
+					</div>
+					<div class="spinner-container container2">
+						<div class="circle1"></div>
+						<div class="circle2"></div>
+						<div class="circle3"></div>
+						<div class="circle4"></div>
+					</div>
+					<div class="spinner-container container3">
+						<div class="circle1"></div>
+						<div class="circle2"></div>
+						<div class="circle3"></div>
+						<div class="circle4"></div>
+					</div>
+				</div>
 			</div>
 
 			<!--<div class="layui-footer">
@@ -172,14 +193,17 @@
 		</div>
 		<script src="../js/jquery.min.3.2.1.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/layui/layui.js"></script>
+		<script src="../js/require.min.js" type="text/javascript" charset="utf-8" data-main='../js/main'></script>
+		<script src="mainPageJS/map3D.js" type="text/javascript" charset="utf-8"></script>
+		<script src="mainPageJS/mainPage.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			$(document).ready(function() {
-				var username=document.cookie;
+				var username = document.cookie;
 				$('#usernameEN').text(username);
-//				$('#usernameZH').text(userinfo.role);
-				
+				//				$('#usernameZH').text(userinfo.role);
+
 				function time() {
-					var weekday=[];
+					var weekday = [];
 					weekday[0] = "星期日"
 					weekday[1] = "星期一"
 					weekday[2] = "星期二"
@@ -194,7 +218,7 @@
 					var h = date.getHours();
 					var m = date.getMinutes();
 					var s = date.getSeconds();
-					var day=weekday[date.getDay()];
+					var day = weekday[date.getDay()];
 
 					$('.sj span').eq(0).html(n);
 					$('.sj span').eq(1).html(y);
