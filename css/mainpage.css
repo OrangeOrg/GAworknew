@@ -1,0 +1,89 @@
+.layui-header {
+	background-image: url(../images/head.png);
+	background-size: 100% 100%;
+}
+
+.layui-nav .layui-nav-item {}
+
+.layui-nav .layui-nav-item a {}
+
+
+/*.layui-side{
+	top:80px
+}*/
+
+.mapicon {
+	content: url(../images/mapicon.png);
+}
+
+.imgicon {
+	content: url(../images/img.png);
+}
+
+.closeicon {
+	content: url(../images/close.png);
+}
+
+.sceneicon {
+	content: url(../images/scene.png);
+}
+.gwqyicon{
+	content: url(../images/gw.png);
+}
+.2Dicon{
+	content: url(../images/2d.png);
+	height: 45px;
+	with:20px
+}
+.username{
+	position: absolute;
+	top: 45px;
+	left: 0px;
+	height: 140px;
+	width: 140px;
+	text-align: center;
+	vertical-align:middle
+}
+.sj{
+	position: absolute;
+	top: 155px;
+	font-size: 6px;
+}
+
+
+/*.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-this>a:hover{
+	background-color: #1eb4de;
+}*/
+
+.layui-nav-tree .layui-nav-child dd.layui-this a,
+.layui-nav-tree .layui-this>a {
+	background-color: #1eb4de;
+}
+
+/*.layui-nav .layui-nav-item:hover,*/
+.layui-nav .layui-this {
+	/*background-color: #1eb4de;*/
+	background: -webkit-linear-gradient(90deg, #1c7caa, #10477b); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(90deg, #1c7caa, #10477b); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(90deg, #1c7caa, #10477b); /* Firefox 3.6 - 15 */
+    background: linear-gradient(90deg, #1c7caa, #10477b); /* 标准的语法（必须放在最后） */
+}
+
+.layui-nav-tree{
+	/*background-color: #10477b;*/
+	background: -webkit-linear-gradient(90deg, #1c7caa, #10477b); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(90deg, #1c7caa, #10477b); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(90deg, #1c7caa, #10477b); /* Firefox 3.6 - 15 */
+    background: linear-gradient(90deg, #1c7caa, #10477b); /* 标准的语法（必须放在最后） */
+}
+/*.layui-nav-item:hover{
+	background-color: #1eb4de;
+}*/
+
+
+/*.layui-nav-item::-moz-selection{
+	background-color: #1eb4de;
+}
+.layui-nav-item::selection{
+	background-color: #1eb4de;
+}*/
