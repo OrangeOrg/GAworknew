@@ -21,6 +21,10 @@ var modelurl = ['data/xfc.s3m']
 
 function initmap3D(){	
 	$('#loadingbar').css({'display':'block'});
+	if(WGmap3D)
+	{
+		
+	}
 	WGmap3D = new Orange.WGmap3D('cesiumContainer', initparameter);
 	$('#loadingbar').hide();
 	if(!WGmap3D.scene.pickPositionSupported) {
